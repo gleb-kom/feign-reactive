@@ -12,6 +12,7 @@ public class Http2cServerConfig {
 
     public static WireMockConfiguration wireMockConfig(){
         return WireMockConfiguration.wireMockConfig()
+                .dynamicPort()
                 .httpServerFactory((options, adminRequestHandler, stubRequestHandler) ->
                         new JettyHttpServer(options, adminRequestHandler, stubRequestHandler) {
                             @Override
